@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><!DOCTYPE html>
+<html>
+<head>
+    <title>Bike count in Seoul Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-container input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .result {
+            font-size: 1.5em;
+            color: #4CAF50;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Bike count in Seoul Prediction</h2>
+        <form action="/predict" method="post">
+            <label for="hour">hour:</label>
+            <input type="number" name="hour" required>
+            
+            <label for="temp">temp:</label>
+            <input type="number" step="any" name="temp" required>
+            
+            <label for="humidity">humidity:</label>
+            <input type="number" step="any" name="humidity" required>
+            
+            <label for="wind">wind:</label>
+            <input type="number" step="any" name="wind" required>
+            
+            <label for="visibility">visibility:</label>
+            <input type="number" step="any" name="visibility" required>
+
+            <label for="dew_pt_temp">dew_pt_temp:</label>
+            <input type="number" step="any" name="dew_pt_temp" required>
+            
+            <label for="radiation">radiation:</label>
+            <input type="number" step="any" name="radiation" required>
+            
+            <label for="rain">rain:</label>
+            <input type="number" name="rain" required>
+            
+            <label for="snow">snow:</label>
+            <input type="number" name="snow" required>
+            
+            <label for="season">season:</label>
+            <input type="number" name="season" required>
+
+            <label for="holiday">holiday:</label>
+            <input type="number" name="holiday" required>
+            
+            <input type="submit" value="Predict">
+        </form>
+        {% if prediction_text %}
+        <div class="result">{{ prediction_text }}</div>
+        {% endif %}
+
+    </div>
+</body>
+</html>
