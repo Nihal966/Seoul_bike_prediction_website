@@ -4,7 +4,7 @@
     <title><!DOCTYPE html>
 <html>
 <head>
-    <title>Bike count in Seoul Prediction</title>
+    <title>Uber Bike count prediction in Seoul based on different weather characteristics</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -44,40 +44,41 @@
 </head>
 <body>
     <div class="form-container">
-        <h2>Bike count in Seoul Prediction</h2>
+        <h2>Uber Bike count prediction in Seoul based on different weather characteristics</h2>
+        <p><b>Dataset Used: https://archive.ics.uci.edu/dataset/560/seoul+bike+sharing+demand</b></p>
         <form action="/predict" method="post">
-            <label for="hour">hour:</label>
-            <input type="number" name="hour" required>
+            <label for="Hour">Hour:</label>
+            <input type="number" name="Hour" required>
             
-            <label for="temp">temp:</label>
-            <input type="number" step="any" name="temp" required>
+            <label for="Temperature">Temperature:</label>
+            <input type="number" step="any" name="Temperature" required>
             
-            <label for="humidity">humidity:</label>
-            <input type="number" step="any" name="humidity" required>
+            <label for="Humidity">Humidity:</label>
+            <input type="number" step="any" name="Humidity" required>
             
-            <label for="wind">wind:</label>
-            <input type="number" step="any" name="wind" required>
+            <label for="Wind">Wind:</label>
+            <input type="number" step="any" name="Wind" required>
             
-            <label for="visibility">visibility:</label>
-            <input type="number" step="any" name="visibility" required>
+            <label for="Visibility">Visibility:</label>
+            <input type="number" step="any" name="Visibility" required>
 
-            <label for="dew_pt_temp">dew_pt_temp:</label>
-            <input type="number" step="any" name="dew_pt_temp" required>
+            <label for="Dew point temperature">Dew point temperature:</label>
+            <input type="number" step="any" name="Dew point temperature" required>
             
-            <label for="radiation">radiation:</label>
-            <input type="number" step="any" name="radiation" required>
+            <label for="Solar Radiation">Solar Radiation:</label>
+            <input type="number" step="any" name="Solar Radiation" required>
             
-            <label for="rain">rain:</label>
-            <input type="number" name="rain" required>
+            <label for="Rainfall">Rainfall:</label>
+            <input type="number" name="Rainfall" required>
             
-            <label for="snow">snow:</label>
-            <input type="number" name="snow" required>
+            <label for="Snow">Snow:</label>
+            <input type="number" name="Snow" required>
             
-            <label for="season">season:</label>
-            <input type="number" name="season" required>
+            <label for="Season">Season:</label>
+            <input type="number" name="Season" required>
 
-            <label for="holiday">holiday:</label>
-            <input type="number" name="holiday" required>
+            <label for="Holiday">Holiday:</label>
+            <input type="number" name="Holiday" required>
             
             <input type="submit" value="Predict">
         </form>
