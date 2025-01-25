@@ -1,6 +1,7 @@
 # app.py
 
 from flask import Flask, request, jsonify, render_template
+from sklearn.preprocessing import PolynomialFeatures
 import pickle
 import numpy as np
 
@@ -18,11 +19,14 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     # Extract data from form
+    poly = PolynomialFeatures(degree=2, include_bias=False)
+
     int_features = [float(x) for x in request.form.values()]
     print("Received form data: ", int_features)
 
     final_features = np.array(int_features)
     final_features = final_features.reshape(1,-1)
+    final_features = poly.fit_transform(final_features)
     
     # Make prediction
     prediction = model.predict(final_features)
